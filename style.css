@@ -1,0 +1,5 @@
+body { margin: 0; background-color: #0D1117; color: #E5E7EB; font-family: sans-serif; overflow: hidden; }
+.github-link { position: absolute; top: 20px; right: 20px; z-index: 100; }
+.github-link img { width: 40px; filter: invert(1); }
+#orb-container { display: flex; justify-content: center; align-items: center; height: 100vh; }
+#greyOrb { width: 400px; height: 400px; }
