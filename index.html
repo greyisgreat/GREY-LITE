@@ -3,17 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GREY-LITE</title>
+    <title>GREY-LITE | AI Environment</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href="https://github.com/greyisgreat/GREY-LITE" class="github-link" target="_blank">
-        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
-    </a>
-    
-    <div id="orb-container">
+    <header>
+        <div class="status-indicator">SYSTEM: ONLINE</div>
+        <a href="https://github.com/greyisgreat/GREY-LITE" class="github-link" target="_blank">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+        </a>
+    </header>
+
+    <main>
         <canvas id="greyOrb"></canvas>
-    </div>
+        <div id="ai-console">
+            <div id="output-text">Awaiting command...</div>
+        </div>
+    </main>
+
+    <section id="widgets">
+        <div class="widget">TIME: <span id="time">--:--</span></div>
+        <div class="widget">MODEL: GEMINI-FLASH</div>
+    </section>
 
     <script src="app.js"></script>
 </body>
