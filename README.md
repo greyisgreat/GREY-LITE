@@ -1,39 +1,37 @@
- GREY-LITE
-GREY-LITE is a voice-first, lightweight AI operating environment designed for performance, accessibility, and elegance. Built as a streamlined entry point into the GREY ecosystem, it focuses on core functionality and speed.
+# GREY-LITE
 
-Vision
-GREY-LITE exists to provide immediate, hands-free access to powerful AI reasoning without the overhead of complex desktop environments. It serves as a gateway to the more advanced, feature-rich version of the system.
+**GREY-LITE** is a voice-first, lightweight AI operating environment built for speed and simplicity. It serves as a streamlined interface for the [GREY ecosystem](https://github.com/greyisgreat/G.R.E.Y-MARK-1), optimized for immediate deployment on **Cloudflare Pages**.
 
-Features
-Voice-First Interaction: Engineered for natural, conversational dialogue. Users interact primarily through voice, minimizing the need for manual typing.
+---
 
-Gemini-Powered Intelligence: Utilizes the Google Gemini API to provide fast, reliable, and intelligent responses.
+## Vision
+**GREY-LITE** provides a minimalist, orb-centric interface powered by the **Gemini API**. It is engineered for low-latency performance and a clean, voice-interactive experience that prioritizes functionality over complexity.
 
-Dynamic Visuals: Features a central, animated orb inspired by advanced wireframe design, acting as the visual core of the user experience.
+---
 
-On-Demand Utilities: Includes capabilities for retrieving the time, providing local weather, rendering Mermaid.js diagrams, and displaying live map data.
+## Features
+* **Voice-First Interaction**: Designed for hands-free, conversational dialogue where users interact primarily through speech.
+* **Gemini-Powered Intelligence**: Leverages the **Gemini API** for fast, reliable, and intelligent reasoning.
+* **Animated Visual Core**: Features a high-fidelity animated orb interface inspired by advanced wireframe geometry and the "greyish-blue" aesthetic.
+* **Utility Suite**: Includes built-in support for real-time timekeeping, local weather, live map data, and on-the-fly diagram rendering.
+* **Cloud-Optimized**: Built for **Cloudflare Pages**, ensuring high availability and global performance.
 
-Cloud-Ready: Optimized for deployment on Cloudflare Pages, ensuring high availability and fast global performance.
+---
 
-Architecture
-GREY-LITE uses a minimalist, single-page application (SPA) architecture. It consists of three primary files in the root directory to maximize simplicity and deployment speed:
+## Architecture
+**GREY-LITE** utilizes a clean, root-level structure:
+* **`index.html`**: The core interface.
+* **`style.css`**: The dark, futuristic theme.
+* **`app.js`**: The central logic managing voice, **Gemini API** communication, and animations.
 
-index.html: Defines the layout, including the canvas for the orb and the GitHub link.
+---
 
-style.css: Implements the dark, futuristic, "greyish-blue" aesthetic.
+## Deployment
+1. Fork this repository to your **GitHub** account.
+2. Connect to **Cloudflare Pages**.
+3. Set your `GEMINI_API_KEY` in environment variables.
 
-app.js: Contains the logic for the orb animation, speech recognition, speech synthesis, and API communication.
+---
 
-Setup & Deployment
-Repository: Clone or fork this repository to your GitHub account.
-
-API Key: Obtain a Gemini API Key from the Google AI Studio.
-
-Environment Variables: Configure your Cloudflare Pages project settings to include your API key as an environment variable to maintain security.
-
-Deployment: Connect your repository to Cloudflare Pages. Since no build steps are required, deployment is near-instant.
-
-Links
-GREY-LITE Repository: https://github.com/greyisgreat/GREY-LITE
-
-Full Version (G.R.E.Y-MARK-1): https://github.com/greyisgreat/G.R.E.Y-MARK-1
+## Related Projects
+* **G.R.E.Y-MARK-1 (Full Version)**: [Access here](https://github.com/greyisgreat/G.R.E.Y-MARK-1).
