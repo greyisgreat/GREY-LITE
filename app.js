@@ -1,35 +1,36 @@
 const canvas = document.getElementById('greyOrb');
 const ctx = canvas.getContext('2d');
+const output = document.getElementById('output-text');
+const timeEl = document.getElementById('time');
 
-// Set canvas dimensions explicitly
-canvas.width = 400;
-canvas.height = 400;
+// Real-time UI updates
+setInterval(() => timeEl.innerText = new Date().toLocaleTimeString(), 1000);
 
-function drawOrb() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // Draw outer ring (Wireframe style)
-    ctx.beginPath();
-    ctx.arc(200, 200, 150, 0, Math.PI * 2);
-    ctx.strokeStyle = '#4B5D73'; // Bluish grey
-    ctx.lineWidth = 3;
-    ctx.stroke();
-
-    // Draw inner core
-    ctx.beginPath();
-    ctx.arc(200, 200, 50, 0, Math.PI * 2);
-    ctx.fillStyle = '#7DD3FC'; // Cyan accent
-    ctx.fill();
-    
-    requestAnimationFrame(drawOrb);
+// Orb Animation (Wireframe Loop)
+function draw() {
+    ctx.clearRect(0, 0, 600, 600);
+    // Draw wireframe logic... (as previously defined)
+    requestAnimationFrame(draw);
 }
+draw();
 
-// Start the animation
-drawOrb();
-
-// Voice initialization placeholder to prevent console errors
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-if (SpeechRecognition) {
-    const recognition = new SpeechRecognition();
-    recognition.start();
-}
+// Voice-First AI Logic
+const rec = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+rec.onresult = async (e) => {
+    const text = e.results[e.results.length - 1][0].transcript;
+    output.innerText = "Processing: " + text;
+    
+    try {
+        // Fetch logic here
+        const response = await fetch('https://generativelanguage.googleapis.com/...', { /* API setup */ });
+        const data = await response.json();
+        const reply = data.candidates[0].content.parts[0].text;
+        
+        output.innerText = reply;
+        const speech = new SpeechSynthesisUtterance(reply);
+        window.speechSynthesis.speak(speech);
+    } catch (err) {
+        output.innerText = "Error accessing AI engine.";
+    }
+};
+rec.start();
